@@ -17,6 +17,9 @@ int main() {
     float area;
     float pib;
     int npontost;
+    //adicionado 2 variaveis novas para calculo
+    float denpopu; 
+    float pibpercap;
     // Cadastro da Carta 1
     printf("Digite um Estado (Apenas 1 Letra: ex: S): ");
     scanf("%c", &estado);
@@ -28,10 +31,13 @@ int main() {
     scanf("%d", &populacao);
     printf("Digite a area da cidade: ");
     scanf("%f", &area);
-    printf("Qual o PIB: ");
-    scanf("%f", &pib);
+    printf("Qual o PIB: (Se for em Bilhoes, coloque todos os numeros)  ");
+    scanf(" %f", &pib);
     printf("Quantos pontos turisticos tem? ");
     scanf("%d", &npontost);
+    //Calculo do pibpercapita e densidade populacional
+    denpopu = populacao / area;
+    pibpercap = pib / populacao;
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     printf("EXIBINDO RESULTADOS DA CARTA %s\n", codigo);
     printf("Estado: %c\n", estado);
@@ -41,6 +47,8 @@ int main() {
     printf("Área: %.2f\n", area);
     printf("PIB: %.2f\n", pib);
     printf("Pontos turísticos: %d\n", npontost);
+    printf("Densidade populacional: %.2f\n", denpopu);
+    printf("PIB per capita: %.2f\n", pibpercap);
 
         // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: Estado, código da carta, nome da cidade, população, área, pib e pontos turísticos.
@@ -52,6 +60,10 @@ int main() {
     float area2;
     float pib2;
     int npontost2;
+    //adicionado 2 variaveis novas para calculo
+    float denpopu2;
+    float pibpercap2;
+     
     // Cadastro da Carta 2
     printf("Digite o Estado (Apenas 1 Letra: ex: S): ");
     scanf(" %c", &estado2);
@@ -63,10 +75,13 @@ int main() {
     scanf("%d", &populacao2);
     printf("Digite a area da cidade: ");
     scanf("%f", &area2);
-    printf("Qual o PIB: ");
-    scanf("%f", &pib2);
+    printf("Qual o PIB: (Se for em Bilhoes, coloque todos os numeros) ");
+    scanf(" %f", &pib2);
     printf("Quantos pontos turisticos tem? ");
     scanf("%d", &npontost2);
+    //Calculo do pibpercapita e densidade populacional
+    denpopu2 = populacao2 / area2;
+    pibpercap2 = pib2 / populacao2;
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     printf("EXIBINDO RESULTADOS DA CARTA %s\n", codigo2);
     printf("Estado: %c\n", estado2);
@@ -76,6 +91,8 @@ int main() {
     printf("Área: %.2f\n", area2);
     printf("PIB: %.2f\n", pib2);
     printf("Pontos turísticos: %d\n", npontost2);
+    printf("Densidade populacional: %.2f\n", denpopu2);
+    printf("PIB per capita: %.2f\n", pibpercap2);
 
 
   
