@@ -22,7 +22,7 @@ int main() {
     float pibpercap;
     
     // Cadastro da Carta 1
-    printf("Digite um Estado (Apenas 1 Letra: ex: S): ");
+    printf("Digite um Estado  (Apenas 1 Letra: ex: A): ");
     scanf("%c", &estado);
     printf("Digite o codigo (Ex. A01): ");
     scanf("%s", codigo);
@@ -68,7 +68,7 @@ int main() {
     
      
     // Cadastro da Carta 2
-    printf("Digite o Estado (Apenas 1 Letra: ex: S): ");
+    printf("Digite o Estado 2 (Apenas 1 Letra: ex: B): ");
     scanf(" %c", &estado2);
     printf("Digite o codigo (Ex. A01): ");
     scanf("%s", codigo2);
@@ -198,7 +198,170 @@ int main() {
         break;
     }
 
+    //jogador1- escolhe 2 atributos (população, area, pib, pontos turisticos, densidade, pibpercap, superpoder)
+    //jogador2- escolhe 2 atributos.(população, area, pib, pontos turisticos, densidade, pibpercap, superpoder)
+    //comparar somando os 2; maior vence.exceto densidade populacional;
     
+    int pontosJ1 = 0, pontosJ2 = 0;
+    //int escolha;
+    int j1escolha1, j1escolha2, j2escolha1, j2escolha2;
+    
+    // JOGADOR 1 - ESCOLHA 1
+    
+    printf("\n**** Jogador 1 - escolha o ATRIBUTO 1 ****\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade Populacional\n");
+    printf("6 - PIB per capita\n");
+    printf("7 - Super Poder\n");
+    scanf("%d", &j1escolha1);
+    
+    
+    switch (j1escolha1) {
+        case 1:
+         if (populacao > populacao2) { pontosJ1++; } else if (populacao < populacao2) { pontosJ2++; } break;
+        case 2:
+         if (area > area2) { pontosJ1++; } else if (area < area2) { pontosJ2++; } break;
+        case 3:
+         if (pib > pib2) { pontosJ1++; } else if (pib < pib2) { pontosJ2++; } break;
+        case 4:
+         if (npontost > npontost2) { pontosJ1++; } else if (npontost < npontost2) { pontosJ2++; } break;
+        case 5: 
+        if (denpopu < denpopu2) { pontosJ1++; } else if (denpopu > denpopu2) { pontosJ2++; } break;
+        case 6:
+         if (pibpercap > pibpercap2) { pontosJ1++; } else if (pibpercap < pibpercap2) { pontosJ2++; } break;
+        case 7:
+         if (superpoder1 > superpoder2) { pontosJ1++; } else if (superpoder1 < superpoder2) { pontosJ2++; } break;
+        default:
+         printf("Opção inválida!\n");
+    }
+    
+    
+    // JOGADOR 1 - ESCOLHA 2
+    
+    printf("\n**** Jogador 1 - escolha o ATRIBUTO 2 (não pode ser igual à primeira escolha) ****\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade Populacional\n");
+    printf("6 - PIB per capita\n");
+    printf("7 - Super Poder\n");
+    scanf("%d", &j1escolha2);
+    
+    if (j1escolha1 == j1escolha2)
+    {
+        printf("Escolha igual não permitido!\n");
+        return 0;
+    }else{
+    
+    switch (j1escolha2) {
+        case 1:
+         if (populacao > populacao2) { pontosJ1++; } else if (populacao < populacao2) { pontosJ2++; } break;
+        case 2:
+         if (area > area2) { pontosJ1++; } else if (area < area2) { pontosJ2++; } break;
+        case 3:
+         if (pib > pib2) { pontosJ1++; } else if (pib < pib2) { pontosJ2++; } break;
+        case 4:
+         if (npontost > npontost2) { pontosJ1++; } else if (npontost < npontost2) { pontosJ2++; } break;
+        case 5: 
+        if (denpopu < denpopu2) { pontosJ1++; } else if (denpopu > denpopu2) { pontosJ2++; } break;
+        case 6:
+         if (pibpercap > pibpercap2) { pontosJ1++; } else if (pibpercap < pibpercap2) { pontosJ2++; } break;
+        case 7: 
+        if (superpoder1 > superpoder2) { pontosJ1++; } else if (superpoder1 < superpoder2) { pontosJ2++; } break;
+        default: 
+        printf("Opção inválida!\n");
+    }
+    }
+    
+    
+    // JOGADOR 2 - ESCOLHA 1
+    
+    printf("\n**** Jogador 2 - escolha o ATRIBUTO 1 ****\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade Populacional\n");
+    printf("6 - PIB per capita\n");
+    printf("7 - Super Poder\n");
+    scanf("%d", &j2escolha1);
+    
+    switch (j2escolha1) {
+        case 1:
+         if (populacao > populacao2) { pontosJ1++; } else if (populacao < populacao2) { pontosJ2++; } break;
+        case 2: 
+        if (area > area2) { pontosJ1++; } else if (area < area2) { pontosJ2++; } break;
+        case 3: 
+        if (pib > pib2) { pontosJ1++; } else if (pib < pib2) { pontosJ2++; } break;
+        case 4: 
+        if (npontost > npontost2) { pontosJ1++; } else if (npontost < npontost2) { pontosJ2++; } break;
+        case 5: 
+        if (denpopu < denpopu2) { pontosJ1++; } else if (denpopu > denpopu2) { pontosJ2++; } break;
+        case 6:
+         if (pibpercap > pibpercap2) { pontosJ1++; } else if (pibpercap < pibpercap2) { pontosJ2++; } break;
+        case 7:
+         if (superpoder1 > superpoder2) { pontosJ1++; } else if (superpoder1 < superpoder2) { pontosJ2++; } break;
+        default: printf("Opção inválida!\n");
+    }
+    
+    
+    // JOGADOR 2 - ESCOLHA 2
+    
+    printf("\n**** Jogador 2 - escolha o ATRIBUTO 2 (Não pode ser igual a escolha 1)****\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade Populacional\n");
+    printf("6 - PIB per capita\n");
+    printf("7 - Super Poder\n");
+    scanf("%d", &j2escolha2);
+
+    if (j2escolha2 == j2escolha1)
+    {
+        printf("Escolha igual não permitido!\n");
+    }else{
+    
+    
+    switch (j2escolha2) {
+        case 1: 
+        if (populacao > populacao2) { pontosJ1++; } else if (populacao < populacao2) { pontosJ2++; } break;
+        case 2:
+         if (area > area2) { pontosJ1++; } else if (area < area2) { pontosJ2++; } break;
+        case 3:
+         if (pib > pib2) { pontosJ1++; } else if (pib < pib2) { pontosJ2++; } break;
+        case 4:
+         if (npontost > npontost2) { pontosJ1++; } else if (npontost < npontost2) { pontosJ2++; } break;
+        case 5:
+         if (denpopu < denpopu2) { pontosJ1++; } else if (denpopu > denpopu2) { pontosJ2++; } break;
+        case 6: 
+        if (pibpercap > pibpercap2) { pontosJ1++; } else if (pibpercap < pibpercap2) { pontosJ2++; } break;
+        case 7: 
+        if (superpoder1 > superpoder2) { pontosJ1++; } else if (superpoder1 < superpoder2) { pontosJ2++; } break;
+        default:
+         printf("Opção inválida!\n");
+    }
+    
+    }
+    // RESULTADO FINAL
+    
+    printf("\nPLACAR FINAL:\n");
+    printf("Jogador 1: %d pontos\n", pontosJ1);
+    printf("Jogador 2: %d pontos\n", pontosJ2);
+    
+    if (pontosJ1 > pontosJ2) {
+        printf(" Jogador 1 venceu!\n");
+    } else if (pontosJ2 > pontosJ1) {
+        printf(" Jogador 2 venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
+     
+    return 0;
       
      
 
